@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">nom</th>
+            <th scope="col">turi</th>
+            <th scope="col">narxi</th>
+            <th scope="col">miqdori</th>
+            <th scope="col">vaqti</th>
+            <th scope="col">delete</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% res.forEach((value) => { %>
+                <tr>
+                    <th scope="row"><%=value.id%></th>
+                    <td><%=value.nomi%></td>
+                    <td><%=value.turi%></td>
+                    <td><%=value.narxi%></td>
+                    <td><%=value.miqdori%></td>
+                    <td><%=value.vaqt%></td>
+                    <td><a class="btn btn-danger" href="/delete/<%=value.id%>">Del</a></td>
+                    <td><a class="btn btn-primary" href="/edit/<%=value.id%>">Edit</a></td>
+                </tr>
+            <% }) %>
+          
+        </tbody>
+    </table>
+</body>
+</html>

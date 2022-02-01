@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="/salom/<%=res[0].id%>" method="post">
+        <input value="<%=res[0].nomi%>" name="nom" class="form-control" style="width: 200px; display: inline-block;" placeholder="Nomi" type="text" id="fname">
+        <input value="<%=res[0].turi%>" name="turi" class="form-control" style="width: 200px; display: inline-block;" placeholder="Turi" type="text" id="lname">
+        <input value="<%=res[0].narxi%>" name="narxi" class="form-control" style="width: 200px; display: inline-block;" placeholder="Narxi" type="text" id="email">
+        <input value="<%=res[0].miqdori%>" name="miqdori" class="form-control" style="width: 200px; display: inline-block;" placeholder="Miqdori" type="text" id="phone">
+        <input value="<%=res[0].vaqt%>" name="vaqt" class="form-control" style="width: 200px; display: inline-block;" placeholder="Vaqti" type="date" id="phone">
+        <input type="submit" class="btn btn-primary" value="Edit">
+    </form>
+</body>
+</html>

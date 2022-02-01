@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="/add" method="post">
+        <input name="nom" class="form-control" style="width: 200px; display: inline-block;" placeholder="Nomi" type="text" id="fname">
+        <input name="turi" class="form-control" style="width: 200px; display: inline-block;" placeholder="Turi" type="text" id="lname">
+        <input name="narxi" class="form-control" style="width: 200px; display: inline-block;" placeholder="Narxi" type="text" id="email">
+        <input name="miqdori" class="form-control" style="width: 200px; display: inline-block;" placeholder="Miqdori" type="text" id="phone">
+        <input name="vaqt" class="form-control" style="width: 200px; display: inline-block;" placeholder="Vaqti" type="date" id="phone">
+        <input type="submit" class="btn btn-primary" value="Add">
+    </form>
+    <form action="/sotish" method="post">
+        <select name="nom" style="width: 100px; height: 35px;">
+            <% res.forEach((value) => { %>
+                <option value="<%=value.id%>"><%=value.nomi%></option>
+            <% }) %>
+        </select>
+        <input name="miqdor" class="form-control" style="width: 200px; display: inline-block;" placeholder="miqdori" type="text" id="lname">
+        <input type="submit" class="btn btn-primary" value="Add">
+    </form>
+    <form action="/search" method="post">
+        <input name="search" class="form-control" style="width: 200px; display: inline-block;" placeholder="Qidiruv.." type="search" id="lname">
+        <input type="submit" class="btn btn-primary" value="Search">
+    </form>
+    <br><br>
+    <p>Umumiy summa</p>
+    <h3><%=sum[0].narx%> so`m</h3>
+    <br><br>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">nom</th>
+            <th scope="col">turi</th>
+            <th scope="col">narxi</th>
+            <th scope="col">miqdori</th>
+            <th scope="col">vaqti</th>
+            <th scope="col">delete</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% res.forEach((value) => { %>
+                <tr>
+                    <th scope="row"><%=value.id%></th>
+                    <td><%=value.nomi%></td>
+                    <td><%=value.turi%></td>
+                    <td><%=value.narxi%></td>
+                    <td><%=value.miqdori%></td>
+                    <td><%=value.vaqt%></td>
+                    <td><a class="btn btn-danger" href="/delete/<%=value.id%>">Del</a></td>
+                    <td><a class="btn btn-primary" href="/edit/<%=value.id%>">Edit</a></td>
+                </tr>
+            <% }) %>
+          
+        </tbody>
+    </table>
+</body>
+</html>
